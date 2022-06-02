@@ -122,6 +122,11 @@ class GW_Admin_Bar_Plugin_Manager {
 
 				$( document ).on( 'keydown keyup', function( e ) {
 
+					// Ignore events that are inside inputs/textarea
+                    if ( $(e.target).is('textarea, input' ) ) {
+						return;
+                    }
+
 					e = e || event; // to deal with IE
 					keyMap[ e.keyCode ] = e.type == 'keydown';
 
