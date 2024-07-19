@@ -20,7 +20,7 @@ class GW_Admin_Bar_Plugin_Manager {
 	private function __construct() {
 
 		add_action( 'admin_head', array( $this, 'enhance_admin_bar_scripts_styles' ), 99 );
-		add_action( 'admin_bar_menu', array( $this, 'enhance_admin_bar' ) );
+		add_action( 'admin_bar_menu', array( $this, 'enhance_admin_bar' ), 6 );
 
 		add_action( 'init', array( $this, 'handle_actions' ) );
 
